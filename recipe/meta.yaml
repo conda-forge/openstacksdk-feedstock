@@ -1,7 +1,7 @@
 {%set name = "openstacksdk" %}
-{%set version = "0.8.6" %}
+{%set version = "0.9.14" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "ce336129b3929336093f01b5b54a25725b1e0b3d919c931c62b28193119442e2" %}
+{%set hash_val = "ac40cc1a5d4ade6a50fbe147a617de0b8adb2285b52a5ccd85896cc1e13a24e8" %}
 
 package:
   name: {{ name }}
