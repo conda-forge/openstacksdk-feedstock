@@ -1,43 +1,50 @@
 {%set name = "openstacksdk" %}
 {%set version = "0.9.14" %}
+{%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
 {%set hash_val = "ac40cc1a5d4ade6a50fbe147a617de0b8adb2285b52a5ccd85896cc1e13a24e8" %}
+{%set build_num = "0" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  fn: {{ name }}-{{ version }}.{{ compress_type }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
   {{ hash_type }}: {{ hash_val }}
 
 build:
-  number: 0
+  number: {{ build_num }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   build:
     - python
     - setuptools
-    - pbr >=1.8
+    - pbr >=2.0.0
 
   run:
     - python
-    - pbr >=1.8
+    - pbr >=2.0.0
     - six >=1.9.0
-    - stevedore >=1.10.0
-    - os-client-config >=1.13.1
-    - keystoneauth1 >=2.7.0
+    - stevedore >=1.20.0
+    - os-client-config >=1.22.0
+    - keystoneauth1 >=2.18.0
+    - deprecation >=1.0
 
 test:
   imports:
     - openstack
 
 about:
-  home: http://developer.openstack.org/sdks/python/openstacksdk/
+  home: https://developer.openstack.org/sdks/python/openstacksdk/
+  license_file: LICENSE
   license: Apache 2.0
-  summary: 'Collection of libraries for building applications to work with OpenStack clouds. '
+  license_family: Apache
+  summary: Collection of libraries for building applications to work with OpenStack clouds.
+  doc_url: https://developer.openstack.org/sdks/python/openstacksdk/
+  dev_url: https://github.com/openstack/python-openstacksdk
 
 extra:
   recipe-maintainers:
