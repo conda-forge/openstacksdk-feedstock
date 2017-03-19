@@ -1,13 +1,13 @@
 About openstacksdk
 ==================
 
-Home: http://developer.openstack.org/sdks/python/openstacksdk/
+Home: https://developer.openstack.org/sdks/python/openstacksdk/
 
 Package license: Apache 2.0
 
 Feedstock license: BSD 3-Clause
 
-Summary: Collection of libraries for building applications to work with OpenStack clouds. 
+Summary: Collection of libraries for building applications to work with OpenStack clouds.
 
 
 
