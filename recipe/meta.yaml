@@ -1,36 +1,37 @@
-{%set name = "openstacksdk" %}
-{%set version = "0.9.17" %}
-{%set compress_type = "tar.gz" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "992b862df2e13a164055e009694c70c1d6f13cf283768a1b8ef509409d67846a" %}
-{%set build_num = "0" %}
+{% set name = "openstacksdk" %}
+{% set version = "0.9.17" %}
+{% set bundle = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash = "992b862df2e13a164055e009694c70c1d6f13cf283768a1b8ef509409d67846a" %}
+{% set build = 0 %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ compress_type }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash_val }}
+  fn: {{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
+  {{ hash_type }}: {{ hash }}
 
 build:
-  number: {{ build_num }}
+  number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   build:
     - python
     - setuptools
-    - pbr >=2.0.0
+    - pbr !=2.1.0,>=2.0.0
 
   run:
     - python
-    - pbr >=2.0.0
+    - pbr !=2.1.0,>=2.0.0
+    - jsonpatch >=1.1
     - six >=1.9.0
     - stevedore >=1.20.0
-    - os-client-config >=1.22.0
-    - keystoneauth1 >=2.18.0
+    - os-client-config >=1.27.0
+    - keystoneauth1 >=2.21.0
     - deprecation >=1.0
 
 test:
