@@ -1,8 +1,8 @@
 {%set name = "openstacksdk" %}
-{%set version = "0.9.14" %}
+{%set version = "0.9.17" %}
 {%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "ac40cc1a5d4ade6a50fbe147a617de0b8adb2285b52a5ccd85896cc1e13a24e8" %}
+{%set hash_val = "992b862df2e13a164055e009694c70c1d6f13cf283768a1b8ef509409d67846a" %}
 {%set build_num = "0" %}
 
 package:
