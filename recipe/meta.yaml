@@ -1,8 +1,8 @@
 {% set name = "openstacksdk" %}
-{% set version = "0.9.14" %}
+{% set version = "0.9.18" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "ac40cc1a5d4ade6a50fbe147a617de0b8adb2285b52a5ccd85896cc1e13a24e8" %}
+{% set hash = "6d60336a8a01ea0272e5ccf33f50f4179c6cee56c1b0f6723dd40a3bdae31d00" %}
 {% set build = 0 %}
 
 package:
@@ -22,15 +22,16 @@ requirements:
   build:
     - python
     - setuptools
-    - pbr >=2.0.0
+    - pbr!=2.1.0,>=2.0.0
 
   run:
     - python
-    - pbr >=2.0.0
+    - pbr!=2.1.0,>=2.0.0
+    - jsonpatch >=1.16
     - six >=1.9.0
     - stevedore >=1.20.0
-    - os-client-config >=1.22.0
-    - keystoneauth1 >=2.18.0
+    - os-client-config >=1.28.0
+    - keystoneauth1 >=3.2.0
     - deprecation >=1.0
 
 test:
