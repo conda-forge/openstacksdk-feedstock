@@ -1,8 +1,8 @@
 {% set name = "openstacksdk" %}
-{% set version = "0.9.19" %}
+{% set version = "0.11.3" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "ac0a160304efba4eaed62d144e9ea0a8f2ba33f7dcd66ba015226c81960b53b5" %}
+{% set hash = "da31da83a39c1df02243a40bb09ba1c7c13b371523e141624f231fb349a1199d" %}
 {% set build = 0 %}
 
 package:
@@ -16,7 +16,7 @@ source:
 
 build:
   noarch: python
-  number: {{ build }}
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
