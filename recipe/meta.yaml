@@ -3,37 +3,46 @@
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
 {% set hash = "da31da83a39c1df02243a40bb09ba1c7c13b371523e141624f231fb349a1199d" %}
-{% set build = 0 %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
   fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
   {{ hash_type }}: {{ hash }}
 
 build:
   noarch: python
   number: 0
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
     - pbr !=2.1.0,>=2.0.0
 
   run:
     - python
     - pbr !=2.1.0,>=2.0.0
-    - jsonpatch >=1.16
-    - six >=1.9.0
-    - stevedore >=1.20.0
-    - os-client-config >=1.28.0
-    - keystoneauth1 >=3.2.0
+    - pyyaml >=3.12
+    - appdirs >=1.3.0
+    - requestsexceptions >=1.2.0
+    - jsonpatch !=1.20,>=1.16
+    - six >=1.10.0
+    - os-service-types >=1.2.0
+    - keystoneauth1 >=3.4.0
     - deprecation >=1.0
+    - munch >=2.1.0
+    - decorator >=3.4.0
+    - jmespath >=0.9.0
+    - ipaddress >=1.0.17  # [py2k]
+    - futures >=3.0.0  # [py2k]
+    - iso8601 >=0.1.11
+    - netifaces >=0.10.4
+    - dogpile.cache >=0.6.2
 
 test:
   imports:
