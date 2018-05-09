@@ -18,7 +18,6 @@ jobs:
       - run:
           # Run, test and (if we have a BINSTAR_TOKEN) upload the distributions.
           command: ./.circleci/run_docker_build.sh
-
   build_linux_python3.5:
     working_directory: ~/test
     machine: true
