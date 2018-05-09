@@ -14,8 +14,9 @@ Summary: Collection of libraries for building applications to work with OpenStac
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/openstacksdk-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/openstacksdk-feedstock)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/openstacksdk-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/openstacksdk-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/openstacksdk-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/openstacksdk-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/openstacksdk-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/openstacksdk-feedstock/branch/master)
 
 Current release info
 ====================
