@@ -1,24 +1,23 @@
 {% set name = "openstacksdk" %}
-{% set version = "0.17.0" %}
+{% set version = "0.17.1" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "8b9f0b271d5a07f781b8a2909c377b705438c9745a003f53e903f70a571f83ac" %}
+{% set hash = "8150dd6eda2923d83e40c8527264ce9bdf82f7071dd83ef4c3199b0fc73b18a7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
   {{ hash_type }}: {{ hash }}
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
-  build:
+  host:
     - python
     - pip
     - pbr !=2.1.0,>=2.0.0
@@ -32,7 +31,7 @@ requirements:
     - jsonpatch !=1.20,>=1.16
     - six >=1.10.0
     - os-service-types >=1.2.0
-    - keystoneauth1 >=3.4.0
+    - keystoneauth1 >=3.8.0
     - deprecation >=1.0
     - munch >=2.1.0
     - decorator >=3.4.0
@@ -42,6 +41,7 @@ requirements:
     - iso8601 >=0.1.11
     - netifaces >=0.10.4
     - dogpile.cache >=0.6.2
+    - cryptography >=2.1
 
 test:
   imports:
