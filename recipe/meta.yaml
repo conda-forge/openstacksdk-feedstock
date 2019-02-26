@@ -1,8 +1,8 @@
 {% set name = "openstacksdk" %}
-{% set version = "0.20.0" %}
+{% set version = "0.24.0" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "97ed925c86003bd6d01db2317023e8f2f1f05f9dd17b3dffaf7145a1f1234f2b" %}
+{% set hash = "a964fecce707ce444e38af6d00eb04e6a2b1f2f82a56e91333f2520f75e8472b" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
   {{ hash_type }}: {{ hash }}
 
 build:
-  number: 1000
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
