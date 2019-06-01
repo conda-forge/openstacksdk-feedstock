@@ -1,8 +1,8 @@
 {% set name = "openstacksdk" %}
-{% set version = "0.26.0" %}
+{% set version = "0.29.0" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "46bdd2c27345cf08ded9e8138dce58d846400e11ab47bad050ffc33e9fa8ee7b" %}
+{% set hash = "2e16a90eb753229f991776929c47f4e1fc8ae11d2cf739c732134faf927a9061" %}
 
 package:
   name: {{ name|lower }}
