@@ -1,46 +1,43 @@
 {% set name = "openstacksdk" %}
-{% set version = "0.26.0" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "46bdd2c27345cf08ded9e8138dce58d846400e11ab47bad050ffc33e9fa8ee7b" %}
+{% set version = "0.46.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: a1617f00810a0ec1353e66e7da9fe9b4f926a830bb14b48643b6461b8808ef29
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . -vv
+  noarch: python
+  entry_points:
+    - openstack-inventory = openstack.cloud.cmd.inventory:main
 
 requirements:
   host:
-    - python
+    - python >=3.5
     - pip
     - pbr !=2.1.0,>=2.0.0
 
   run:
-    - python
+    - python >=3.5
     - pbr !=2.1.0,>=2.0.0
     - pyyaml >=3.12
     - appdirs >=1.3.0
     - requestsexceptions >=1.2.0
     - jsonpatch !=1.20,>=1.16
     - six >=1.10.0
-    - os-service-types >=1.2.0
-    - keystoneauth1 >=3.8.0
-    - deprecation >=1.0
+    - os-service-types >=1.7.0
+    - keystoneauth1 >=3.18.0
     - munch >=2.1.0
-    - decorator >=3.4.0
+    - decorator >=4.4.1
     - jmespath >=0.9.0
-    - ipaddress >=1.0.17  # [py2k]
-    - futures >=3.0.0  # [py2k]
     - iso8601 >=0.1.11
     - netifaces >=0.10.4
-    - dogpile.cache >=0.6.2
+    - dogpile.cache >=0.6.5
     - cryptography >=2.1
 
 test:
@@ -50,7 +47,7 @@ test:
 about:
   home: https://developer.openstack.org/sdks/python/openstacksdk/
   license_file: LICENSE
-  license: Apache 2.0
+  license: Apache-2.0
   license_family: Apache
   summary: Collection of libraries for building applications to work with OpenStack clouds.
   doc_url: https://developer.openstack.org/sdks/python/openstacksdk/
