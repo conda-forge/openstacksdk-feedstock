@@ -1,5 +1,5 @@
 {% set name = "openstacksdk" %}
-{% set version = "0.49.0" %}
+{% set version = "0.50.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d28c5ef590a3bb3b4b893148fc9986c25b90a33f7f07de918525535eec0db333
+  sha256: 2ec441d9f64a2e64d2888d0a4eca2e07c4f6f98251424ec7733dad771a364c55
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - openstack-inventory = openstack.cloud.cmd.inventory:main
-  skip: True  # [py<36]
+  skip: true  # [py<36]
 
 requirements:
   host:
