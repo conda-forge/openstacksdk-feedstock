@@ -8,9 +8,12 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 3500f2a7b3c317db255510dea6ff59500b4525899f4a083acf764546ea427402
+  patches:
+    # remove when next version is released!
+    - 0fb65458d27ca6d5aba084181f730f23a8cb64ae.diff
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - openstack-inventory = openstack.cloud.cmd.inventory:main
