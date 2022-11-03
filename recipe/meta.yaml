@@ -10,7 +10,7 @@ source:
   sha256: b2a18feba79eac2ac3469c8dafe01d4008c8ac30be3a4c6b53275b4f1c6ba2ad
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - openstack-inventory = openstack.cloud.cmd.inventory:main
