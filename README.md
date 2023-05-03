@@ -1,11 +1,11 @@
-About openstacksdk
-==================
+About openstacksdk-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openstacksdk-feedstock/blob/main/LICENSE.txt)
 
 Home: https://developer.openstack.org/sdks/python/openstacksdk/
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openstacksdk-feedstock/blob/main/LICENSE.txt)
 
 Summary: Collection of libraries for building applications to work with OpenStack clouds.
 
