@@ -1,5 +1,5 @@
 {% set name = "openstacksdk" %}
-{% set version = "1.5.0" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 141b51fa28c6b1cdeb98ebdc38c1cee6a4e754bd6bc84ab7aaa0d0c2bce5443e
+  sha256: 697cb62515c548d3b7fc5cb3f865e279b930d39e37dceb11d871f81f9fa591e8
 
 build:
   number: 0
@@ -39,6 +39,7 @@ requirements:
     - dogpile.cache >=0.6.5
     - cryptography >=2.7
     - importlib-metadata >=1.7.0
+    - platformdirs >=3
 
 test:
   imports:
