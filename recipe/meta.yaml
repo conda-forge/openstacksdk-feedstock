@@ -1,5 +1,5 @@
 {% set name = "openstacksdk" %}
-{% set version = "3.0.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b0c7f9a025d5da92ad4c762941e6acc4cb53930a07ff739a9aebcc5e5a724ae6
+  sha256: 707f15d7ec074ab2434b9a5e1984facab00f822d272f4c2a5de0d22a09eb79cd
 
 build:
   number: 0
