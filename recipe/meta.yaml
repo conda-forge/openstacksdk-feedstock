@@ -36,7 +36,7 @@ requirements:
     - decorator >=4.4.1
     - jmespath >=0.9.0
     - iso8601 >=0.1.11
-    - netifaces >=0.10.4
+    - psutil>=3.2.2
     - dogpile.cache >=0.6.5
     - cryptography >=2.7
     - platformdirs >=3
@@ -44,6 +44,10 @@ requirements:
 test:
   imports:
     - openstack
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://developer.openstack.org/sdks/python/openstacksdk/
