@@ -1,5 +1,6 @@
 {% set name = "openstacksdk" %}
 {% set version = "4.14.0" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
