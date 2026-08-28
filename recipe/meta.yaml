@@ -1,5 +1,5 @@
 {% set name = "openstacksdk" %}
-{% set version = "4.18.0" %}
+{% set version = "4.19.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/60/d0/514c38d0b7f4d3652321baf0c5136ac29ce9360a2094fcdcd78f865cb7c9/openstacksdk-{{ version }}.tar.gz
-  sha256: 466f2f869bcf6dec717a5e6c65c0522b1bd061d53310c7bf11982e0d9244f70c
+  url: https://files.pythonhosted.org/packages/14/93/b3fc4d0f0d2fdc1371eaf15014b73caacffdf2d53536e275dafec5ac965d/openstacksdk-{{ version }}.tar.gz
+  sha256: 706f732a04c6c1cb92a9f41cdd2de5d3ae0e1dc5cf110b59ac3855a989e88dbf
 
 build:
   number: 0
